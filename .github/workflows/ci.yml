@@ -1,0 +1,157 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+  workflow_dispatch:
+
+jobs:
+
+  # ---------------------------------------------------------------------------
+  # Job 1: Arduino sketch unit tests (native Linux, g++)
+  # ---------------------------------------------------------------------------
+  test-arduino:
+    name: "Test: Arduino sketch"
+    runs-on: arc-runner-hive13
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y gcc g++ make
+
+      - name: Build and run tests
+        working-directory: tests/arduino
+        run: make
+
+  # ---------------------------------------------------------------------------
+  # Job 2: Firmware unit tests (native Linux, gcc)
+  # ---------------------------------------------------------------------------
+  test-firmware:
+    name: "Test: LUFA firmware"
+    runs-on: arc-runner-hive13
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y gcc g++ make
+
+      - name: Build and run tests
+        working-directory: tests/firmware
+        run: make
+
+  # ---------------------------------------------------------------------------
+  # Job 3: Build Arduino sketch (.hex) — requires passing Arduino tests
+  # ---------------------------------------------------------------------------
+  build-sketch:
+    name: "Build: Arduino sketch"
+    runs-on: arc-runner-hive13
+    needs: test-arduino
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Cache the arduino-cli binary itself
+      - name: Cache arduino-cli binary
+        id: cache-arduino-cli
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/bin/arduino-cli
+          key: arduino-cli-latest
+
+      - name: Install arduino-cli
+        if: steps.cache-arduino-cli.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/.local/bin
+          curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh \
+            | BINDIR=~/.local/bin sh
+
+      - name: Ensure arduino-cli is on PATH
+        run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      # Cache the arduino:avr core + associated Go module downloads
+      - name: Cache Arduino cores
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.arduino15/staging
+            ~/.arduino15/packages
+          key: arduino-core-avr-${{ runner.os }}-${{ hashFiles('**/boards.txt') }}
+          restore-keys: |
+            arduino-core-avr-${{ runner.os }}-
+
+      - name: Update arduino-cli index
+        run: arduino-cli core update-index
+
+      - name: Install arduino:avr core
+        run: arduino-cli core install arduino:avr
+
+      - name: Build sketch
+        run: |
+          arduino-cli compile \
+            --fqbn arduino:avr:leonardo \
+            --output-dir build-sketch \
+            MIDI-Bass-Pedal/MIDI-Bass-Pedal.ino
+
+      - name: Upload sketch artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: midi-bass-pedal-sketch-hex
+          path: build-sketch/*.hex
+          if-no-files-found: error
+
+  # ---------------------------------------------------------------------------
+  # Job 4: Build LUFA firmware (.hex) — requires passing firmware tests
+  # ---------------------------------------------------------------------------
+  build-firmware:
+    name: "Build: LUFA firmware"
+    runs-on: arc-runner-hive13
+    needs: test-firmware
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install AVR toolchain
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y gcc-avr avr-libc make
+
+      # Cache the LUFA source tree by the tag we pin to
+      - name: Cache LUFA 210130
+        id: cache-lufa
+        uses: actions/cache@v4
+        with:
+          path: MIDI-Bass-Pedal/LUFA
+          key: lufa-210130
+
+      - name: Clone LUFA 210130
+        if: steps.cache-lufa.outputs.cache-hit != 'true'
+        # The firmware makefile sets LUFA_PATH = ../LUFA/LUFA, so we need the
+        # LUFA repo cloned at  MIDI-Bass-Pedal/LUFA/  (the inner "LUFA" folder
+        # is LUFA's own directory layout inside the repo).
+        run: |
+          git clone --depth 1 --branch 210130 \
+            https://github.com/abcminiuser/lufa.git \
+            MIDI-Bass-Pedal/LUFA
+
+      - name: Build firmware
+        working-directory: MIDI-Bass-Pedal/firmware
+        run: make
+
+      - name: Upload firmware artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: midi-bass-pedal-firmware-hex
+          path: MIDI-Bass-Pedal/firmware/*.hex
+          if-no-files-found: error
