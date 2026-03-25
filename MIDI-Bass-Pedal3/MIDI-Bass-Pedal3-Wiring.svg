@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1400" height="920" viewBox="0 0 1400 920">
+<defs>
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="2.5" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+
+<rect x="0" y="0" w="1400" h="920" width="1400" height="920" fill="#1e1e2e" stroke="none" stroke-width="1.5" rx="0" opacity="1"/>
+<text x="700" y="40" font-size="22" fill="#f8f8f2" text-anchor="middle" font-weight="bold" font-family="monospace">MIDI Bass Pedal — v3 Wiring Diagram</text>
+<text x="700" y="62" font-size="13" fill="#888899" text-anchor="middle" font-weight="normal" font-family="monospace">Arduino Mega ADK  |  13 Keys + Octave ±  Panic  Mode  Velocity  NeoPixel</text>
+<rect x="80" y="120" w="420" h="680" width="420" height="680" fill="#1a6b3c" stroke="#0d4a28" stroke-width="3" rx="12" opacity="1"/>
+<text x="290" y="155" font-size="16" fill="#f8f8f2" text-anchor="middle" font-weight="bold" font-family="monospace">Arduino Mega ADK</text>
+<rect x="50" y="180" w="30" h="40" width="30" height="40" fill="#333355" stroke="#555577" stroke-width="1.5" rx="4" opacity="1"/>
+<text x="65" y="206" font-size="8" fill="#888899" text-anchor="middle" font-weight="normal" font-family="monospace">USB</text>
+<rect x="52" y="250" w="28" h="28" width="28" height="28" fill="#222233" stroke="#555577" stroke-width="1.5" rx="4" opacity="1"/>
+<text x="66" y="269" font-size="7" fill="#888899" text-anchor="middle" font-weight="normal" font-family="monospace">PWR</text>
+<rect x="500" y="171" w="14" h="324" width="14" height="324" fill="#2a2a2a" stroke="#555" stroke-width="1.5" rx="2" opacity="1"/>
+<circle cx="507" cy="180" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="184" font-size="9" fill="#4fc3f7" text-anchor="end" font-weight="normal" font-family="monospace">D22 – Key 0</text>
+<circle cx="507" cy="198" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="202" font-size="9" fill="#4fc3f7" text-anchor="end" font-weight="normal" font-family="monospace">D23 – Key 1</text>
+<circle cx="507" cy="216" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="220" font-size="9" fill="#4fc3f7" text-anchor="end" font-weight="normal" font-family="monospace">D24 – Key 2</text>
+<circle cx="507" cy="234" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="238" font-size="9" fill="#4fc3f7" text-anchor="end" font-weight="normal" font-family="monospace">D25 – Key 3</text>
+<circle cx="507" cy="252" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="256" font-size="9" fill="#4fc3f7" text-anchor="end" font-weight="normal" font-family="monospace">D26 – Key 4</text>
+<circle cx="507" cy="270" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="274" font-size="9" fill="#4fc3f7" text-anchor="end" font-weight="normal" font-family="monospace">D27 – Key 5</text>
+<circle cx="507" cy="288" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="292" font-size="9" fill="#4fc3f7" text-anchor="end" font-weight="normal" font-family="monospace">D28 – Key 6</text>
+<circle cx="507" cy="306" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="310" font-size="9" fill="#4fc3f7" text-anchor="end" font-weight="normal" font-family="monospace">D29 – Key 7</text>
+<circle cx="507" cy="324" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="328" font-size="9" fill="#4fc3f7" text-anchor="end" font-weight="normal" font-family="monospace">D30 – Key 8</text>
+<circle cx="507" cy="342" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="346" font-size="9" fill="#4fc3f7" text-anchor="end" font-weight="normal" font-family="monospace">D31 – Key 9</text>
+<circle cx="507" cy="360" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="364" font-size="9" fill="#4fc3f7" text-anchor="end" font-weight="normal" font-family="monospace">D32 – Key 10</text>
+<circle cx="507" cy="378" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="382" font-size="9" fill="#4fc3f7" text-anchor="end" font-weight="normal" font-family="monospace">D33 – Key 11</text>
+<circle cx="507" cy="396" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="400" font-size="9" fill="#4fc3f7" text-anchor="end" font-weight="normal" font-family="monospace">D34 – Key 12</text>
+<circle cx="507" cy="414" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="418" font-size="9" fill="#ab47bc" text-anchor="end" font-weight="normal" font-family="monospace">D17 – Mode</text>
+<circle cx="507" cy="432" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="436" font-size="9" fill="#ef5350" text-anchor="end" font-weight="normal" font-family="monospace">D18 – Panic</text>
+<circle cx="507" cy="450" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="454" font-size="9" fill="#ffb74d" text-anchor="end" font-weight="normal" font-family="monospace">D19 – Oct −</text>
+<circle cx="507" cy="468" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="472" font-size="9" fill="#ffb74d" text-anchor="end" font-weight="normal" font-family="monospace">D20 – Oct +</text>
+<circle cx="507" cy="486" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="492" y="490" font-size="9" fill="#ffd54f" text-anchor="end" font-weight="normal" font-family="monospace">D6  – NeoPixel</text>
+<rect x="120" y="800" w="80" h="14" width="80" height="14" fill="#2a2a2a" stroke="#555" stroke-width="1.5" rx="2" opacity="1"/>
+<circle cx="140" cy="807" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="140" y="794" font-size="9" fill="#66bb6a" text-anchor="middle" font-weight="normal" font-family="monospace">A0 – Velocity</text>
+<rect x="210" y="800" w="80" h="14" width="80" height="14" fill="#2a2a2a" stroke="#555" stroke-width="1.5" rx="2" opacity="1"/>
+<circle cx="230" cy="807" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="230" y="794" font-size="9" fill="#78909c" text-anchor="middle" font-weight="normal" font-family="monospace">GND</text>
+<rect x="300" y="800" w="60" h="14" width="60" height="14" fill="#2a2a2a" stroke="#555" stroke-width="1.5" rx="2" opacity="1"/>
+<circle cx="320" cy="807" r="4" fill="#c0c0c0" stroke="none"/>
+<text x="320" y="794" font-size="9" fill="#ff5252" text-anchor="middle" font-weight="normal" font-family="monospace">5V</text>
+<rect x="680" y="80" w="560" h="300" width="560" height="300" fill="#26263a" stroke="#4fc3f7" stroke-width="1.5" rx="8" opacity="1"/>
+<text x="960" y="98" font-size="12" fill="#4fc3f7" text-anchor="middle" font-weight="bold" font-family="monospace">13 Keys  (INPUT_PULLUP · active LOW)</text>
+<rect x="710" y="112.0" w="60" h="16" width="60" height="16" fill="#2d2d44" stroke="#555577" stroke-width="1.5" rx="3" opacity="1"/>
+<text x="740" y="124.0" font-size="8" fill="#4fc3f7" text-anchor="middle" font-weight="normal" font-family="monospace">Key 0  C</text>
+<polyline points="770,120.0 660,120.0 660,180 514,180" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+<line x1="710" y1="120.0" x2="698" y2="120.0" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="131.23076923076923" w="60" h="16" width="60" height="16" fill="#2d2d44" stroke="#555577" stroke-width="1.5" rx="3" opacity="1"/>
+<text x="740" y="143.23076923076923" font-size="8" fill="#4fc3f7" text-anchor="middle" font-weight="normal" font-family="monospace">Key 1  C#</text>
+<polyline points="770,139.23076923076923 660,139.23076923076923 660,198 514,198" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+<line x1="710" y1="139.23076923076923" x2="698" y2="139.23076923076923" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="150.46153846153845" w="60" h="16" width="60" height="16" fill="#2d2d44" stroke="#555577" stroke-width="1.5" rx="3" opacity="1"/>
+<text x="740" y="162.46153846153845" font-size="8" fill="#4fc3f7" text-anchor="middle" font-weight="normal" font-family="monospace">Key 2  D</text>
+<polyline points="770,158.46153846153845 660,158.46153846153845 660,216 514,216" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+<line x1="710" y1="158.46153846153845" x2="698" y2="158.46153846153845" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="169.69230769230768" w="60" h="16" width="60" height="16" fill="#2d2d44" stroke="#555577" stroke-width="1.5" rx="3" opacity="1"/>
+<text x="740" y="181.69230769230768" font-size="8" fill="#4fc3f7" text-anchor="middle" font-weight="normal" font-family="monospace">Key 3  D#</text>
+<polyline points="770,177.69230769230768 660,177.69230769230768 660,234 514,234" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+<line x1="710" y1="177.69230769230768" x2="698" y2="177.69230769230768" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="188.9230769230769" w="60" h="16" width="60" height="16" fill="#2d2d44" stroke="#555577" stroke-width="1.5" rx="3" opacity="1"/>
+<text x="740" y="200.9230769230769" font-size="8" fill="#4fc3f7" text-anchor="middle" font-weight="normal" font-family="monospace">Key 4  E</text>
+<polyline points="770,196.9230769230769 660,196.9230769230769 660,252 514,252" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+<line x1="710" y1="196.9230769230769" x2="698" y2="196.9230769230769" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="208.15384615384613" w="60" h="16" width="60" height="16" fill="#2d2d44" stroke="#555577" stroke-width="1.5" rx="3" opacity="1"/>
+<text x="740" y="220.15384615384613" font-size="8" fill="#4fc3f7" text-anchor="middle" font-weight="normal" font-family="monospace">Key 5  F</text>
+<polyline points="770,216.15384615384613 660,216.15384615384613 660,270 514,270" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+<line x1="710" y1="216.15384615384613" x2="698" y2="216.15384615384613" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="227.3846153846154" w="60" h="16" width="60" height="16" fill="#2d2d44" stroke="#555577" stroke-width="1.5" rx="3" opacity="1"/>
+<text x="740" y="239.3846153846154" font-size="8" fill="#4fc3f7" text-anchor="middle" font-weight="normal" font-family="monospace">Key 6  F#</text>
+<polyline points="770,235.3846153846154 660,235.3846153846154 660,288 514,288" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+<line x1="710" y1="235.3846153846154" x2="698" y2="235.3846153846154" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="246.6153846153846" w="60" h="16" width="60" height="16" fill="#2d2d44" stroke="#555577" stroke-width="1.5" rx="3" opacity="1"/>
+<text x="740" y="258.61538461538464" font-size="8" fill="#4fc3f7" text-anchor="middle" font-weight="normal" font-family="monospace">Key 7  G</text>
+<polyline points="770,254.6153846153846 660,254.6153846153846 660,306 514,306" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+<line x1="710" y1="254.6153846153846" x2="698" y2="254.6153846153846" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="265.8461538461538" w="60" h="16" width="60" height="16" fill="#2d2d44" stroke="#555577" stroke-width="1.5" rx="3" opacity="1"/>
+<text x="740" y="277.8461538461538" font-size="8" fill="#4fc3f7" text-anchor="middle" font-weight="normal" font-family="monospace">Key 8  G#</text>
+<polyline points="770,273.8461538461538 660,273.8461538461538 660,324 514,324" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+<line x1="710" y1="273.8461538461538" x2="698" y2="273.8461538461538" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="285.0769230769231" w="60" h="16" width="60" height="16" fill="#2d2d44" stroke="#555577" stroke-width="1.5" rx="3" opacity="1"/>
+<text x="740" y="297.0769230769231" font-size="8" fill="#4fc3f7" text-anchor="middle" font-weight="normal" font-family="monospace">Key 9  A</text>
+<polyline points="770,293.0769230769231 660,293.0769230769231 660,342 514,342" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+<line x1="710" y1="293.0769230769231" x2="698" y2="293.0769230769231" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="304.30769230769226" w="60" h="16" width="60" height="16" fill="#2d2d44" stroke="#555577" stroke-width="1.5" rx="3" opacity="1"/>
+<text x="740" y="316.30769230769226" font-size="8" fill="#4fc3f7" text-anchor="middle" font-weight="normal" font-family="monospace">Key 10  A#</text>
+<polyline points="770,312.30769230769226 660,312.30769230769226 660,360 514,360" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+<line x1="710" y1="312.30769230769226" x2="698" y2="312.30769230769226" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="323.53846153846155" w="60" h="16" width="60" height="16" fill="#2d2d44" stroke="#555577" stroke-width="1.5" rx="3" opacity="1"/>
+<text x="740" y="335.53846153846155" font-size="8" fill="#4fc3f7" text-anchor="middle" font-weight="normal" font-family="monospace">Key 11  B</text>
+<polyline points="770,331.53846153846155 660,331.53846153846155 660,378 514,378" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+<line x1="710" y1="331.53846153846155" x2="698" y2="331.53846153846155" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="342.7692307692308" w="60" h="16" width="60" height="16" fill="#2d2d44" stroke="#555577" stroke-width="1.5" rx="3" opacity="1"/>
+<text x="740" y="354.7692307692308" font-size="8" fill="#4fc3f7" text-anchor="middle" font-weight="normal" font-family="monospace">Key 12  C</text>
+<polyline points="770,350.7692307692308 660,350.7692307692308 660,396 514,396" stroke="#4fc3f7" stroke-width="1.5" fill="none"/>
+<line x1="710" y1="350.7692307692308" x2="698" y2="350.7692307692308" stroke="#78909c" stroke-width="1.5" />
+<line x1="694" y1="115" x2="694" y2="351.7692307692308" stroke="#78909c" stroke-width="2" />
+<text x="692" y="108" font-size="8" fill="#78909c" text-anchor="middle" font-weight="normal" font-family="monospace">GND</text>
+<rect x="680" y="396" w="560" h="160" width="560" height="160" fill="#26263a" stroke="#aaaaff" stroke-width="1.5" rx="8" opacity="1"/>
+<text x="960" y="414" font-size="12" fill="#aaaaff" text-anchor="middle" font-weight="bold" font-family="monospace">Control Buttons  (INPUT_PULLUP · active LOW)</text>
+<rect x="710" y="428.0" w="90" h="24" width="90" height="24" fill="#2d2d44" stroke="#ffb74d" stroke-width="1.5" rx="4" opacity="1"/>
+<text x="755" y="444.0" font-size="9" fill="#ffb74d" text-anchor="middle" font-weight="normal" font-family="monospace">Octave −</text>
+<polyline points="800,440.0 660,440.0 660,450 514,450" stroke="#ffb74d" stroke-width="1.8" fill="none"/>
+<line x1="710" y1="440.0" x2="698" y2="440.0" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="456.75" w="90" h="24" width="90" height="24" fill="#2d2d44" stroke="#ffb74d" stroke-width="1.5" rx="4" opacity="1"/>
+<text x="755" y="472.75" font-size="9" fill="#ffb74d" text-anchor="middle" font-weight="normal" font-family="monospace">Octave +</text>
+<polyline points="800,468.75 660,468.75 660,468 514,468" stroke="#ffb74d" stroke-width="1.8" fill="none"/>
+<line x1="710" y1="468.75" x2="698" y2="468.75" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="485.5" w="90" h="24" width="90" height="24" fill="#2d2d44" stroke="#ef5350" stroke-width="1.5" rx="4" opacity="1"/>
+<text x="755" y="501.5" font-size="9" fill="#ef5350" text-anchor="middle" font-weight="normal" font-family="monospace">Panic</text>
+<polyline points="800,497.5 660,497.5 660,432 514,432" stroke="#ef5350" stroke-width="1.8" fill="none"/>
+<line x1="710" y1="497.5" x2="698" y2="497.5" stroke="#78909c" stroke-width="1.5" />
+<rect x="710" y="514.25" w="90" h="24" width="90" height="24" fill="#2d2d44" stroke="#ab47bc" stroke-width="1.5" rx="4" opacity="1"/>
+<text x="755" y="530.25" font-size="9" fill="#ab47bc" text-anchor="middle" font-weight="normal" font-family="monospace">Mode</text>
+<polyline points="800,526.25 660,526.25 660,414 514,414" stroke="#ab47bc" stroke-width="1.8" fill="none"/>
+<line x1="710" y1="526.25" x2="698" y2="526.25" stroke="#78909c" stroke-width="1.5" />
+<line x1="694" y1="431" x2="694" y2="528.25" stroke="#78909c" stroke-width="2" />
+<text x="692" y="424" font-size="8" fill="#78909c" text-anchor="middle" font-weight="normal" font-family="monospace">GND</text>
+<rect x="680" y="572" w="560" h="110" width="560" height="110" fill="#26263a" stroke="#66bb6a" stroke-width="1.5" rx="8" opacity="1"/>
+<text x="960" y="590" font-size="12" fill="#66bb6a" text-anchor="middle" font-weight="bold" font-family="monospace">Velocity Potentiometer  (10kΩ)</text>
+<circle cx="800" cy="637" r="28" fill="#2d2d44" stroke="#66bb6a"/>
+<circle cx="800" cy="637" r="10" fill="#111122" stroke="#66bb6a"/>
+<text x="800" y="685" font-size="9" fill="#66bb6a" text-anchor="middle" font-weight="normal" font-family="monospace">10kΩ  Linear</text>
+<circle cx="762" cy="637" r="4" fill="#78909c" stroke="none"/>
+<circle cx="800" cy="667" r="4" fill="#66bb6a" stroke="none"/>
+<circle cx="838" cy="637" r="4" fill="#ff5252" stroke="none"/>
+<text x="762" y="653" font-size="8" fill="#78909c" text-anchor="middle" font-weight="normal" font-family="monospace">GND</text>
+<text x="800" y="681" font-size="8" fill="#66bb6a" text-anchor="middle" font-weight="normal" font-family="monospace">Wiper→A0</text>
+<text x="838" y="653" font-size="8" fill="#ff5252" text-anchor="middle" font-weight="normal" font-family="monospace">5V</text>
+<polyline points="800,667 800,700 140,700 140,807" stroke="#66bb6a" stroke-width="2" fill="none"/>
+<polyline points="762,637 762,712 230,712 230,807" stroke="#78909c" stroke-width="2" fill="none"/>
+<polyline points="838,637 838,724 320,724 320,807" stroke="#ff5252" stroke-width="2" fill="none"/>
+<rect x="680" y="698" w="560" h="100" width="560" height="100" fill="#26263a" stroke="#ffd54f" stroke-width="1.5" rx="8" opacity="1"/>
+<text x="960" y="716" font-size="12" fill="#ffd54f" text-anchor="middle" font-weight="bold" font-family="monospace">NeoPixel Strip  (40 pixels, 5V)</text>
+<rect x="700" y="733" w="520" h="36" width="520" height="36" fill="#111122" stroke="#ffd54f" stroke-width="1.5" rx="4" opacity="1"/>
+<rect x="706.0" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#e51616" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<rect x="742.4285714285714" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#e56f16" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<rect x="778.8571428571429" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#e5c716" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<rect x="815.2857142857143" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#aae516" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<rect x="851.7142857142858" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#51e516" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<rect x="888.1428571428571" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#16e534" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<rect x="924.5714285714286" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#16e58c" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<rect x="961.0" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#16e5e5" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<rect x="997.4285714285714" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#168ce5" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<rect x="1033.857142857143" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#1634e5" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<rect x="1070.2857142857142" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#5116e5" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<rect x="1106.7142857142858" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#aa16e5" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<rect x="1143.142857142857" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#e516c7" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<rect x="1179.5714285714287" y="737" w="33.42857142857143" h="28" width="33.42857142857143" height="28" fill="#e5166f" stroke="none" stroke-width="1.5" rx="2" opacity="1"/>
+<text x="1226" y="753" font-size="9" fill="#ffd54f" text-anchor="start" font-weight="normal" font-family="monospace">… 40px</text>
+<circle cx="715" cy="769" r="4" fill="#ffd54f" stroke="none"/>
+<text x="715" y="783" font-size="8" fill="#ffd54f" text-anchor="middle" font-weight="normal" font-family="monospace">DIN</text>
+<polyline points="715,769 715,808 660,808 660,486 514,486" stroke="#ffd54f" stroke-width="2" fill="none"/>
+<circle cx="730" cy="769" r="4" fill="#ff5252" stroke="none"/>
+<text x="730" y="783" font-size="8" fill="#ff5252" text-anchor="middle" font-weight="normal" font-family="monospace">5V</text>
+<circle cx="750" cy="769" r="4" fill="#78909c" stroke="none"/>
+<text x="750" y="783" font-size="8" fill="#78909c" text-anchor="middle" font-weight="normal" font-family="monospace">GND</text>
+<rect x="1260" y="76" w="240" h="200" width="240" height="200" fill="#26263a" stroke="#555577" stroke-width="1.5" rx="8" opacity="1"/>
+<text x="1370" y="92" font-size="12" fill="#f8f8f2" text-anchor="middle" font-weight="bold" font-family="monospace">Legend</text>
+<line x1="1270" y1="114" x2="1300" y2="114" stroke="#4fc3f7" stroke-width="3" />
+<circle cx="1300" cy="114" r="4" fill="#4fc3f7" stroke="none"/>
+<text x="1310" y="118" font-size="10" fill="#f8f8f2" text-anchor="start" font-weight="normal" font-family="monospace">Key signals (D22–D34)</text>
+<line x1="1270" y1="136" x2="1300" y2="136" stroke="#ffb74d" stroke-width="3" />
+<circle cx="1300" cy="136" r="4" fill="#ffb74d" stroke="none"/>
+<text x="1310" y="140" font-size="10" fill="#f8f8f2" text-anchor="start" font-weight="normal" font-family="monospace">Octave buttons (D19, D20)</text>
+<line x1="1270" y1="158" x2="1300" y2="158" stroke="#ef5350" stroke-width="3" />
+<circle cx="1300" cy="158" r="4" fill="#ef5350" stroke="none"/>
+<text x="1310" y="162" font-size="10" fill="#f8f8f2" text-anchor="start" font-weight="normal" font-family="monospace">Panic button (D18)</text>
+<line x1="1270" y1="180" x2="1300" y2="180" stroke="#ab47bc" stroke-width="3" />
+<circle cx="1300" cy="180" r="4" fill="#ab47bc" stroke="none"/>
+<text x="1310" y="184" font-size="10" fill="#f8f8f2" text-anchor="start" font-weight="normal" font-family="monospace">Mode toggle (D17)</text>
+<line x1="1270" y1="202" x2="1300" y2="202" stroke="#66bb6a" stroke-width="3" />
+<circle cx="1300" cy="202" r="4" fill="#66bb6a" stroke="none"/>
+<text x="1310" y="206" font-size="10" fill="#f8f8f2" text-anchor="start" font-weight="normal" font-family="monospace">Velocity wiper → A0</text>
+<line x1="1270" y1="224" x2="1300" y2="224" stroke="#ffd54f" stroke-width="3" />
+<circle cx="1300" cy="224" r="4" fill="#ffd54f" stroke="none"/>
+<text x="1310" y="228" font-size="10" fill="#f8f8f2" text-anchor="start" font-weight="normal" font-family="monospace">NeoPixel DIN → D6</text>
+<line x1="1270" y1="246" x2="1300" y2="246" stroke="#ff5252" stroke-width="3" />
+<circle cx="1300" cy="246" r="4" fill="#ff5252" stroke="none"/>
+<text x="1310" y="250" font-size="10" fill="#f8f8f2" text-anchor="start" font-weight="normal" font-family="monospace">5V power</text>
+<line x1="1270" y1="268" x2="1300" y2="268" stroke="#78909c" stroke-width="3" />
+<circle cx="1300" cy="268" r="4" fill="#78909c" stroke="none"/>
+<text x="1310" y="272" font-size="10" fill="#f8f8f2" text-anchor="start" font-weight="normal" font-family="monospace">GND</text>
+<rect x="1260" y="296" w="310" h="130" width="310" height="130" fill="#26263a" stroke="#555577" stroke-width="1.5" rx="8" opacity="1"/>
+<text x="1410" y="310" font-size="12" fill="#f8f8f2" text-anchor="middle" font-weight="bold" font-family="monospace">Notes</text>
+<text x="1270" y="328" font-size="9" fill="#888899" text-anchor="start" font-weight="normal" font-family="monospace">All key &amp; button inputs use INPUT_PULLUP.</text>
+<text x="1270" y="346" font-size="9" fill="#888899" text-anchor="start" font-weight="normal" font-family="monospace">Active LOW: connect one leg to GND, other to pin.</text>
+<text x="1270" y="364" font-size="9" fill="#888899" text-anchor="start" font-weight="normal" font-family="monospace">Velocity pot: wiper → A0, ends to 5V and GND.</text>
+<text x="1270" y="382" font-size="9" fill="#888899" text-anchor="start" font-weight="normal" font-family="monospace">NeoPixel strip: external 5V supply recommended</text>
+<text x="1270" y="400" font-size="9" fill="#888899" text-anchor="start" font-weight="normal" font-family="monospace">  for full brightness; add 300–500Ω on DIN.</text>
+<text x="1270" y="418" font-size="9" fill="#888899" text-anchor="start" font-weight="normal" font-family="monospace">Decoupling cap (100–470µF) across strip 5V/GND.</text>
+</svg>
