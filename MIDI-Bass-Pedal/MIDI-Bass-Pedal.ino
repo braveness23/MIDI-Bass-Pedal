@@ -18,7 +18,13 @@
 //   - Polyphonic mode: full independent NoteOn/NoteOff per key
 //   - Velocity set by potentiometer (never from key press force)
 //   - Panic button: CC123 All-Notes-Off on all 16 channels
-//   - NeoPixel feedback: note colour + velocity brightness
+//   - Visual metronome: NeoPixels respond to incoming MIDI NoteOn/NoteOff
+//     (beat pulses from DAW light the strip in pitch-class colour at
+//      velocity-scaled brightness; NoteOff extinguishes the strip)
+//
+// USB MIDI firmware for the ATmega16U2 USB bridge is in firmware/.
+// Flash it with dfu-programmer to make the device enumerate as a native
+// USB MIDI device without a serial-to-MIDI intermediary.
 // =============================================================================
 
 #include <MIDI.h>
@@ -161,24 +167,22 @@ void showBlack() {
     pixels.show();
 }
 
-// Refresh pixel display: show colour for highest-priority active note, or black.
-void refreshPixels() {
-    if (polyMode) {
-        // Show colour for the first active key found
-        for (int i = 0; i < KEY_COUNT; i++) {
-            if (polyNote[i] >= 0) {
-                showNoteColor((byte)polyNote[i], velocity);
-                return;
-            }
-        }
+// -----------------------------------------------------------------------------
+// Visual metronome — incoming MIDI callbacks
+// The DAW (or any upstream device) sends NoteOn pulses on the beat; the strip
+// lights to that note's pitch-class colour at velocity-scaled brightness.
+// NoteOff (or NoteOn with velocity 0) extinguishes the strip.
+// -----------------------------------------------------------------------------
+void handleNoteOn(byte channel, byte note, byte velocity) {
+    if (velocity == 0) {
         showBlack();
-    } else {
-        if (monoActive >= 0) {
-            showNoteColor((byte)monoActive, velocity);
-        } else {
-            showBlack();
-        }
+        return;
     }
+    showNoteColor(note, velocity);
+}
+
+void handleNoteOff(byte channel, byte note, byte velocity) {
+    showBlack();
 }
 
 // -----------------------------------------------------------------------------
@@ -241,7 +245,6 @@ void onKeyPressed(int idx) {
         MIDI.sendNoteOn(note, velocity, MIDI_CHANNEL);
         monoActive = note;
     }
-    refreshPixels();
 }
 
 void onKeyReleased(int idx) {
@@ -269,7 +272,6 @@ void onKeyReleased(int idx) {
         // If a non-active key was released, it was already removed from the
         // stack above; no NoteOff needed (it was never sounded).
     }
-    refreshPixels();
 }
 
 // -----------------------------------------------------------------------------
@@ -355,7 +357,9 @@ void setup() {
     pixels.clear();
     pixels.show();
 
-    // MIDI — listen on all channels so incoming MIDI is processed if needed
+    // MIDI — register visual metronome callbacks, listen on all channels
+    MIDI.setHandleNoteOn(handleNoteOn);
+    MIDI.setHandleNoteOff(handleNoteOff);
     MIDI.begin(MIDI_CHANNEL_OMNI);
 
     // Startup animation: flash each note colour in sequence
