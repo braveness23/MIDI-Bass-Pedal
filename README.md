@@ -4,7 +4,7 @@ A DIY 13-note MIDI bass pedalboard built on an **Arduino Mega ADK**.
 Press a pedal, send a MIDI note. Twist a knob, set your velocity.
 RGB LEDs light up with the note colour. Everything debounced. No compromises.
 
-![Wiring Diagram](MIDI-Bass-Pedal3/MIDI-Bass-Pedal3-Wiring.png)
+![Wiring Diagram](MIDI-Bass-Pedal/MIDI-Bass-Pedal-Wiring.png)
 
 ---
 
@@ -106,7 +106,7 @@ Install via the Arduino Library Manager:
 ## Building & Flashing
 
 1. Clone this repo.
-2. Open `MIDI-Bass-Pedal3/MIDI-Bass-Pedal3.ino` in the Arduino IDE.
+2. Open `MIDI-Bass-Pedal/MIDI-Bass-Pedal.ino` in the Arduino IDE.
 3. Install the two dependencies above.
 4. Select **Arduino Mega ADK** as the board.
 5. Upload.
@@ -144,20 +144,20 @@ Toggle between modes with the Mode button. A panic fires automatically on switch
 
 ## Wiring Diagram
 
-The wiring diagram PNG and its Python generator live in `MIDI-Bass-Pedal3/`:
+The wiring diagram PNG and its Python generator live in `MIDI-Bass-Pedal/`:
 
 ```
-MIDI-Bass-Pedal3/
-├── MIDI-Bass-Pedal3.ino          ← main sketch
-├── MIDI-Bass-Pedal3-Wiring.png   ← wiring diagram (rendered)
-├── MIDI-Bass-Pedal3-Wiring.svg   ← wiring diagram (SVG source)
+MIDI-Bass-Pedal/
+├── MIDI-Bass-Pedal.ino          ← main sketch
+├── MIDI-Bass-Pedal-Wiring.png   ← wiring diagram (rendered)
+├── MIDI-Bass-Pedal-Wiring.svg   ← wiring diagram (SVG source)
 └── generate_diagram.py           ← Pillow-based diagram generator
 ```
 
 To regenerate the diagram after hardware changes:
 
 ```bash
-cd MIDI-Bass-Pedal3
+cd MIDI-Bass-Pedal
 python3 generate_diagram.py
 ```
 

@@ -1,5 +1,5 @@
 """
-Generates MIDI-Bass-Pedal3-Wiring.png using Pillow (PIL).
+Generates MIDI-Bass-Pedal-Wiring.png using Pillow (PIL).
 Run: python3 generate_diagram.py
 """
 
@@ -373,6 +373,6 @@ txt(W//2, 62,
 
 # ── Downsample ────────────────────────────────────────────────────────────────
 out = img.resize((W, H), Image.LANCZOS)
-out_path = "MIDI-Bass-Pedal3/MIDI-Bass-Pedal3-Wiring.png"
+out_path = "MIDI-Bass-Pedal/MIDI-Bass-Pedal-Wiring.png"
 out.save(out_path, "PNG")
 print(f"Saved {W}×{H} PNG → {out_path}")
