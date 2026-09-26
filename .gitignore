@@ -1,1 +1,18 @@
 .vscode/
+
+# Vendored LUFA source — CI clones this fresh (see .github/workflows/ci.yml)
+/MIDI-Bass-Pedal/LUFA/
+
+# Firmware build outputs
+/MIDI-Bass-Pedal/firmware/obj/
+/MIDI-Bass-Pedal/firmware/*.bin
+/MIDI-Bass-Pedal/firmware/*.eep
+/MIDI-Bass-Pedal/firmware/*.elf
+/MIDI-Bass-Pedal/firmware/*.hex
+/MIDI-Bass-Pedal/firmware/*.lss
+/MIDI-Bass-Pedal/firmware/*.map
+/MIDI-Bass-Pedal/firmware/*.sym
+
+# Test build outputs (compiled test binaries, machine-specific)
+/tests/arduino/run_tests
+/tests/firmware/build/
